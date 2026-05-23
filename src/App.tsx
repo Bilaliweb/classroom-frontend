@@ -62,11 +62,11 @@ function App() {
                       </Layout>
                   }>
                       <Route path={'/'} element={<Dashboard />} />
-                      <Route path={'/subjects'}>
+                      <Route path={'subjects'}>
                           <Route index element={<SubjectsList />}></Route>
                           <Route path={'create'} element={<SubjectsCreate />}></Route>
                       </Route>
-                      <Route path={'/classes'}>
+                      <Route path={'classes'}>
                           <Route index element={<ClassesList />}></Route>
                           <Route path={'create'} element={<ClassesCreate />}></Route>
                       </Route>

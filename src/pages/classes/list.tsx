@@ -1,7 +1,7 @@
 const ClassesList = () => {
     return (
         <div>
-            <h1>Create Class</h1>
+            <h1>List Class</h1>
         </div>
     )
 }

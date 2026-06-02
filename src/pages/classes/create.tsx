@@ -87,16 +87,17 @@ const ClassesCreate = () => {
         },
     });
 
-    //   const teachers = teachersQuery.data?.data || [];
-    const teachers = [
-        { id: "t1", name: "Dr. Sarah Mitchell" },
-        { id: "t2", name: "Prof. James Chen" },
-        { id: "t3", name: "Dr. Emily Rodriguez" },
-    ];
-
+    // const teachers = [
+    //     { id: "t1", name: "Dr. Sarah Mitchell" },
+    //     { id: "t2", name: "Prof. James Chen" },
+    //     { id: "t3", name: "Dr. Emily Rodriguez" },
+    // ];
+    
+    const teachers = teachersQuery.data?.data || [];
+    console.log("teachers: ", teachers);
     const teachersLoading = teachersQuery.isLoading;
 
-    const subjects = subjectsQuery.data?.data || [];
+    const subjects = subjectsQuery?.data?.data || [];
     const subjectsLoading = subjectsQuery.isLoading;
 
     const bannerPublicId = form.watch('bannerCldPubId')
@@ -245,7 +246,7 @@ const ClassesCreate = () => {
                                                     </FormControl>
                                                     <SelectContent>
                                                         {teachers.map((teacher) => (
-                                                            <SelectItem key={teacher.id} value={teacher.id}>
+                                                            <SelectItem key={teacher.id.toString()} value={teacher.id.toString()}>
                                                                 {teacher.name}
                                                             </SelectItem>
                                                         ))}

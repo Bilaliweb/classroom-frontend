@@ -101,13 +101,13 @@ export type ClassDetails = {
   description: string;
   status: "active" | "inactive";
   capacity: number;
-  courseCode: string;
-  courseName: string;
+  // courseCode: string;
+  // courseName: string;
   bannerUrl?: string;
   bannerCldPubId?: string;
   subject?: Subject;
   teacher?: User;
-  department?: Department;
+  // department?: Department;
   schedules: Schedule[];
   inviteCode?: string;
 };

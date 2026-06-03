@@ -94,7 +94,6 @@ const ClassesCreate = () => {
     // ];
     
     const teachers = teachersQuery.data?.data || [];
-    console.log("teachers: ", teachers);
     const teachersLoading = teachersQuery.isLoading;
 
     const subjects = subjectsQuery?.data?.data || [];

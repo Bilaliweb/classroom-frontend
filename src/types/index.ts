@@ -107,7 +107,7 @@ export type ClassDetails = {
   bannerCldPubId?: string;
   subject?: Subject;
   teacher?: User;
-  // department?: Department;
+  department?: Department;
   schedules: Schedule[];
   inviteCode?: string;
 };

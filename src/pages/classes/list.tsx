@@ -11,6 +11,7 @@ import { ClassDetails, Subject, User } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { useList } from "@refinedev/core";
+import { ShowButton } from "@/components/refine-ui/buttons/show";
 
 const ClassesList = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -118,6 +119,12 @@ const ClassesList = () => {
                 header: () => <p className="column-title ml-2">Teacher</p>,
                 cell: ({ getValue }) => <span>{getValue<string>()}</span>
             },
+            {
+                id: 'details',
+                size: 100,
+                header: () => <p className="column-title ml-2">Details</p>,
+                cell: ({ row }) => <ShowButton resource="classes" recordItemId={row.original.id} variant={'outline'} size={'sm'}>View</ShowButton>
+            }
         ], []),
         refineCoreProps: {
             resource: 'classes',

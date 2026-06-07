@@ -11,6 +11,7 @@ import { useTable } from "@refinedev/react-table";
 import { Subject } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
+import { ShowButton } from "@/components/refine-ui/buttons/show";
 
 const SubjectsList = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -55,6 +56,21 @@ const SubjectsList = () => {
                 header: () => <span className="truncate line-clamp-2">Description</span>,
                 cell: ({ getValue }) => <span>{getValue<string>()}</span>
             },
+            {
+                id: "details",
+                size: 80,
+                header: () => <p className="column-title">Details</p>,
+                cell: ({ row }) => (
+                  <ShowButton
+                    resource="subjects"
+                    recordItemId={row.original.id}
+                    variant="outline"
+                    size="sm"
+                  >
+                    View
+                  </ShowButton>
+                ),
+              },
         ], []),
         refineCoreProps: {
             resource: 'subjects',
